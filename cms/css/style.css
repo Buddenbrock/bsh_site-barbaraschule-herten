@@ -1,0 +1,140 @@
+@import url("dashboard.css");
+@import url("article.css");
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Helvetica;
+}
+
+body{
+	background-color: #27485B;
+}
+
+section#body{
+	width: 1100px;
+	height: 90%;
+	margin: 30px auto 0px auto;
+}
+	aside{
+		position: fixed;
+		float: left;
+		width: 200px;
+		height: auto;
+		padding-bottom: 40px;
+		background-color: #354052;
+		border-radius: 30px 0px 0px 30px;
+	}
+		aside img{
+			width: 60px;
+			height: 60px;
+			border-radius: 60px;
+			background-color: red;
+			margin: 20px 70px;
+		}
+		
+		aside hr{
+			width: 100%;
+			height: 2px;
+			background-color: #1E242E;
+			margin: 30px 0px;
+			border: none;
+		}
+		aside p{
+			color: #FFF;
+			text-align: center;
+		}
+		aside ul{
+			list-style: none;
+		}
+		
+		aside a{
+			display: block;
+			text-decoration: none;
+			color: #CCC;
+			padding: 10px 0px 10px 35px;
+			-webkit-transition: background 0.3s ease-out 0s;
+			   -moz-transition: background 0.3s ease-out 0s;
+				 -o-transition: background 0.3s ease-out 0s;
+					transition: background 0.3s ease-out 0s;
+		}
+
+
+			aside a:hover,
+			#active{
+				background-color: #1E242E;
+			}
+	
+	section#content{
+		width: 900px;
+		height: auto;
+		min-height: 800px;
+		margin-left: 200px;
+		background-color: #E6E6E6;
+		padding: 20px;
+		margin-bottom: 30px;
+		border-radius: 0px 30px 30px 30px;
+	}
+		h1{
+			padding: 48px 25px;
+			font-size: 30px;
+			color: #354052;
+			font-weight: normal;
+		}
+		
+		a[role="btn"],
+		input[role="btn"]{
+			background-color: #354052;
+			color: #FFF;
+			text-decoration: none;
+			padding: 10px;
+			border-radius: 6px;
+		}
+		
+		#clear{
+			clear: both;		
+		}
+		
+		
+		
+/*--- Formating top ---*/
+div#format_tip{
+	margin: 30px 160px;
+	font-size: 16px;
+	background-color: #FFF;
+	border-radius: 6px;
+	padding: 30px;
+	width: 520px;
+	border: 1px solid gray; 
+	-webkit-box-shadow: 0px 0px 30px -17px rgba(0,0,0,0.75);
+	   -moz-box-shadow: 0px 0px 30px -17px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 30px -17px rgba(0,0,0,0.75);
+}
+	#format_tip h2,
+	#format_tip h3{
+
+		color: #354052;
+		font-weight: normal;
+	}
+		#format_tip h2{
+			padding-bottom: 25px;
+			font-size: 20px;
+		}
+		#format_tip h3{
+			padding-bottom: 5px;
+			font-size: 16px;
+			font-style: italic;
+		}
+	#format_tip input{
+		border: none;
+		color: #000;
+		width: 140px;
+		display: inline;
+		background-color: #FFF;
+		border-right: 1px solid #354052;
+		font-size: 16px;
+		margin: 5px 15px 5px 0px;
+		border-radius: 0px
+	}
+		

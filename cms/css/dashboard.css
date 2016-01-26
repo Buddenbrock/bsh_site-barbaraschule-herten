@@ -1,0 +1,111 @@
+/*----- Dashboard ------*/
+		section#col{
+			width: 293px;
+			height: 20px;
+			margin-right: 10px;
+			float: left;
+		}
+			section#col:nth-child(4){
+				margin-right: 0px; 
+			}
+
+			section.blue{
+				background-color: #0184BC;
+				color: #FFF;
+			}
+			section.green{
+				background-color: #2CA7A5;
+				color: #FFF;
+			}
+			section.grey{
+				background-color: #6F7E95;
+				color: #FFF;
+			}
+			
+			section.dashboard_box_small:hover,
+			section.dashboard_box_big:hover{
+				-webkit-box-shadow: 0px 0px 40px -17px rgba(0,0,0,0.75);
+				-moz-box-shadow: 0px 0px 40px -17px rgba(0,0,0,0.75);
+				box-shadow: 0px 0px 40px -17px rgba(0,0,0,0.75);
+			}
+			section.dashboard_box_small{
+				height: 30px;
+				padding-top: 60px;
+				padding-bottom: 60px;
+				font-weight: bold;
+				font-size: 30px;
+				margin-bottom: 10px;
+				background-position: 35px 40px;
+				background-repeat: no-repeat;
+				border-radius: 6px;
+			}
+			
+			section.dashboard_box_big{
+				height: 310px;
+				font-size: 30px;
+				margin-bottom: 10px;
+				background-position: 35px 40px;
+				background-repeat: no-repeat;
+				border-radius: 6px;
+			}
+				section.dashboard_box_big h2{
+					font-weight: normal;
+					font-size: 13px;
+					padding: 15px 10px
+				}
+				section.dashboard_box_big section.message{
+					height: 255px;
+					overflow-x: hidden;
+					overflow-y: scroll;
+					background-color: #FFF;
+				}
+				section.dashboard_box_big article{
+					background-color: #FFF;
+					border-bottom: 1px solid #6F7E95;
+					padding: 10px 15px;
+					color: #000;
+				}
+					section.dashboard_box_big article h3{
+						font-weight: normal;
+						font-size: 13px;
+						color: #000;
+						margin-top: 2px;
+						margin-bottom: -10px;
+					}
+					section.dashboard_box_big article span{
+						font-size: 12px;
+						color: #6F7E95;
+						font-style: italic;
+					}
+					section.dashboard_box_big article p{
+						font-size: 12px;
+						color: #000;
+						margin-top: 10px;
+					}
+			
+			section#dashboard_datum{
+				text-align: center;
+			}
+			
+			section#dashboard_img,
+			section#dashboard_date,
+			section#dashboard_content,
+			section#dashboard_message{
+				padding-left: 151px;
+			}
+			section#dashboard_img{
+				background-image: url(../img/dashboard_img.png);
+				
+			}
+			section#dashboard_content{
+				background-image: url(../img/dashboard_content.png);
+			}
+			section#dashboard_date{
+				background-image: url(../img/dashboard_date.png);
+			}
+			section#dashboard_message{
+				background-image: url(../img/dashboard_message.png);
+			}
+a{
+	text-decoration: none;
+}
