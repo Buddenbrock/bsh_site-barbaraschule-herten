@@ -1,32 +1,38 @@
 <?php
-	include_once('head.php');
+  include_once('res/php/header.php');
 
-	$sql = "SELECT * FROM content WHERE page = 'aboutus' AND show_article = '1' ORDER BY created ASC";
+  $sql = "SELECT * FROM content WHERE page = 'aboutus' AND show_article = '1' ORDER BY created ASC";
 	$res = mysql_query($sql) or error_log(mysql_error());
 ?>
 
-<article class="full">
-	<h1>Über uns</h1>
-</article>
+    <main>
+      <div class="row box blue">
+        <div class="small-12 columns">
+          <h1>Über uns</h1>
+        </div>
+      </div>
 
 <?php
-	include_once('under_construction.php');
+	include_once('res/php/under_construction.php');
 	while($dsatz = mysql_fetch_assoc($res)){
-		$title = $dsatz['title'];
-		$content = $dsatz['content']
+    $title = $dsatz['title'];
+		$content = $dsatz['content'];
 ?>
 
-<article class="half">
-	<h2><?=($title)?></h2>
-	<?=($content)?>
-</article>
-<article class="half">
-	<a href="img/coverage/coverage1.jpg" data-lightbox="coverage" data-title="Das Schulgebäude der Barbaraschule Herten">
-		<img src="img/coverage/coverage1.jpg" title="Barbaraschule Herten" alt="Das Schulgebäude der Barbaraschule Herten" />
-	</a>
-</article>
+      <div class="row box blue">
+        <div class="small-12 medium-6 columns">
+          <h3><?=($title)?></h3>
+          <?=($content)?>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <img src="res/images/coverage/coverage_img_2.jpg" title="Barbaraschule Herten" alt="Das Schulgebäude der Barbaraschule Herten" />
+        </div>
+      </div>
+<?php
+  }
+ ?>
+    </main>
 
 <?php
-	}
-	include_once('foot.php');
+  include_once('res/php/footer.php');
 ?>

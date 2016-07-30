@@ -27,26 +27,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta charset="utf-8"/>
 		<title>Barbaraschule Herten</title>
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="img/x-icon" href="img/favicon/favicon.ico" />
+		<link rel="shortcut icon" href="img/favicon/favicon.png" />
+		<link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-57x57.png" sizes="57x57" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-72x72.png" sizes="72x72" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-76x76.png" sizes="76x76" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-114x114.png" sizes="114x114" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-144x144.png" sizes="144x144" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+
+    <?=( include_once('include_editor.php') )?>
 	</head>
 	<body>
 		<section id="body">
-			<aside>
-				<img src="img/avatar.png" title="Dirk Buddenbrock"/>
-				<p>Dirk Buddenbrock</p>
-				<hr />
-				<nav>
-					<ul>
-						<li><a href="index.php" title="Dashboard">Dashboard</a></li>
-						<li><a href="message.php" title="Nachrichten">Nachrichten</a></li>
-						<li><a href="article.php" title="Artikel">Artikel</a></li>
-						<li><a href="date.php" id="active" title="Termine">Termine</a></li>
-						<li><a href="image.php" title="Bilder">Bilder</a></li>
-						<li><a href="login.php" title="Logout">Logout</a></li>
-					</ul>
-				</nav>
-			</aside>
+      <?php
+        include_once('aside.php');
+       ?>
 			<section id="content">
 				<h1>Termin bearbeiten</h1>
 				<form method="POST" action="date_save.php">

@@ -1,12 +1,13 @@
 *{
+  font-family: Helvetica;
 	margin: 0px;
 	padding: 0px;
-	font-family: Helvetica;
 }
 
 body{
 	background-color: #27485B;
 	width: 500px;
+  height: 100%;
 	margin: auto;
 	padding: 20px 5px;
 	color: #354052;
@@ -33,6 +34,10 @@ h2{
 	font-size: 28px;
 }
 
+#mobile{
+	display: none;
+}
+
 form{
 	width: 500px;
 	background-color: #FFF;
@@ -51,7 +56,6 @@ input{
 }
 	input[type="email"],
 	input[type="password"]{
-		height: 30px;
 		width: 400px;
 		padding: 10px 70px 10px 30px;
 		background-repeat: no-repeat;
@@ -74,5 +78,23 @@ input{
 			cursor: pointer;
 		}
 
+    #footerinfo{
+    	width: 550px;
+    	margin: 30px auto;
+    	color: #7D919D;
+    	text-align: center;
+    	font-size: 12px;
+    }
 
-
+	@media screen and (max-width: 1023px){
+		form{
+			display: none;
+		}
+		#mobile{
+			display: inherit;
+			width: 500px;
+			background-color: #FFF;
+			border-radius: 30px;
+	    padding: 10px 25px 30px 25px;
+		}
+	}

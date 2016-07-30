@@ -33,7 +33,7 @@ section#body{
 			background-color: red;
 			margin: 20px 70px;
 		}
-		
+
 		aside hr{
 			width: 100%;
 			height: 2px;
@@ -48,7 +48,7 @@ section#body{
 		aside ul{
 			list-style: none;
 		}
-		
+
 		aside a{
 			display: block;
 			text-decoration: none;
@@ -65,11 +65,11 @@ section#body{
 			#active{
 				background-color: #1E242E;
 			}
-	
+
 	section#content{
 		width: 900px;
 		height: auto;
-		min-height: 800px;
+		min-height: 700px;
 		margin-left: 200px;
 		background-color: #E6E6E6;
 		padding: 20px;
@@ -82,7 +82,7 @@ section#body{
 			color: #354052;
 			font-weight: normal;
 		}
-		
+
 		a[role="btn"],
 		input[role="btn"]{
 			background-color: #354052;
@@ -91,13 +91,13 @@ section#body{
 			padding: 10px;
 			border-radius: 6px;
 		}
-		
+
 		#clear{
-			clear: both;		
+			clear: both;
 		}
-		
-		
-		
+
+
+
 /*--- Formating top ---*/
 div#format_tip{
 	margin: 30px 160px;
@@ -106,7 +106,7 @@ div#format_tip{
 	border-radius: 6px;
 	padding: 30px;
 	width: 520px;
-	border: 1px solid gray; 
+	border: 1px solid gray;
 	-webkit-box-shadow: 0px 0px 30px -17px rgba(0,0,0,0.75);
 	   -moz-box-shadow: 0px 0px 30px -17px rgba(0,0,0,0.75);
 			box-shadow: 0px 0px 30px -17px rgba(0,0,0,0.75);
@@ -137,4 +137,3 @@ div#format_tip{
 		margin: 5px 15px 5px 0px;
 		border-radius: 0px
 	}
-		

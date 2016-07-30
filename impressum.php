@@ -1,27 +1,35 @@
 <?php
-	include_once('head.php');
+  include_once('res/php/header.php');
 
-	$sql = "SELECT * FROM content WHERE page = 'impressum' AND show_article = '1'";
-	$res = mysql_query($sql) or die(mysql_error());
+  $sql = "SELECT * FROM content WHERE page = 'impressum' AND show_article = '1'";
+	$res = mysql_query($sql) or error_log(mysql_error());
 ?>
 
-<article class="full">
-	<h1>Impressum</h1>
-</article>
+    <main>
+      <div class="row box blue">
+        <div class="small-12 columns">
+          <h1>Impressum</h1>
+        </div>
+      </div>
 
 <?php
-	include_once('under_construction.php');
+	include_once('res/php/under_construction.php');
 	while($dsatz = mysql_fetch_assoc($res)){
 		$title = $dsatz['title'];
-		$content = $dsatz['content']
+		$content = $dsatz['content'];
 ?>
 
-<article class="full">
-	<h2><?=($title)?></h2>
-	<?=($content)?>
-</article>
+      <div class="row box">
+        <div class="small-12 columns">
+          <h3><?=($title)?></h3>
+          <?=($content)?>
+        </div>
+      </div>
+<?php
+  }
+ ?>
+    </main>
 
 <?php
-	}
-	include_once('foot.php');
+  include_once('res/php/footer.php');
 ?>

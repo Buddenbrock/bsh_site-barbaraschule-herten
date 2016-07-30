@@ -19,7 +19,7 @@
 
 	}else if(isset($_REQUEST['page'])){
 		$page = mysql_real_escape_string($_REQUEST['page']);
-		
+
 		$input_hidden = "name='save_type' value='new'";
 		$title = "";
 		$content = "";
@@ -28,52 +28,52 @@
 		header("Location: article.php");
 	}
 
-	if($page == "aboutus"){			$pagetitle = "Über uns";}
-	else if($page == "history"){	$pagetitle = "Geschichte";}
-	else if($page == "project"){	$pagetitle = "Projekte";}
-	else if($page == "program"){	$pagetitle= "Schulrogramm";}
-	else if($page == "mainfocus"){	$pagetitle = "Schwerpunkte";}
-	else if($page == "activity"){	$pagetitle = "Aktivitäten";}
-	else if($page == "ogs"){		$pagetitle = "OGS";}
-	else if($page == "foundation"){	$pagetitle = "Förderverein";}
-	else if($page == "impressum"){	$pagetitle = "Impressum";}
+  if($page == "aboutus"){		     	$pagetitle = "&Uuml;ber uns";}
+  else if($page == "history"){  	$pagetitle = "Geschichte";}
+  else if($page == "schoollife"){	$pagetitle = "Schulleben";}
+  else if($page == "ogs"){		    $pagetitle = "OGS";}
+  else if($page == "foundation"){	$pagetitle = "F&ouml;rderverein";}
+  else if($page == "contact"){  	$pagetitle = "Kontakt";}
+  else if($page == "impressum"){	$pagetitle = "Impressum";}
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta charset="utf-8"/>
 		<title>Barbaraschule Herten</title>
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="img/x-icon" href="img/favicon/favicon.ico" />
+		<link rel="shortcut icon" href="img/favicon/favicon.png" />
+		<link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-57x57.png" sizes="57x57" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-72x72.png" sizes="72x72" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-76x76.png" sizes="76x76" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-114x114.png" sizes="114x114" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-144x144.png" sizes="144x144" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+
+    <?=( include_once('include_editor.php') )?>
+
 	</head>
 	<body>
 		<section id="body">
-			<aside>
-				<img src="img/avatar.png" title="Dirk Buddenbrock"/>
-				<p>Dirk Buddenbrock</p>
-				<hr />
-				<nav>
-					<ul>
-						<li><a href="index.php" title="Dashboard">Dashboard</a></li>
-						<li><a href="message.php" title="Nachrichten">Nachrichten</a></li>
-						<li><a href="article.php" id="active" title="Artikel">Artikel</a></li>
-						<li><a href="date.php" title="Termine">Termine</a></li>
-						<li><a href="image.php" title="Bilder">Bilder</a></li>
-						<li><a href="login.php" title="Logout">Logout</a></li>
-					</ul>
-				</nav>
-			</aside>
+<?php
+  include_once('aside.php');
+ ?>
 			<section id="content">
 				<h1>Artikel&uuml;bersicht // <?=($pagetitle)?></h1>
-				<nav>
+        <nav>
 					<ul>
-						<li><a title="&Uuml;beruns" href="article.php?page=aboutus">&Uuml;ber uns</a></li>
+						<li><a title="&Uuml;ber uns" href="article.php?page=aboutus">&Uuml;ber uns</a></li>
 						<li><a title="Geschichte" href="article.php?page=history">Geschichte</a></li>
-						<li><a title="Projekte" href="article.php?page=project">Projekt</a></li>
-						<li><a title="Schulprogramm" href="article.php?page=program">Schulprogramm</a></li>
-						<li><a title="Schwerpunkte" href="article.php?page=mainfocus">Schwerpunkte</a></li>
-						<li><a title="Aktivit&auml;ten" href="article.php?page=activity">Aktivit&auml;ten</a></li>
+						<li><a title="Schullife" href="article.php?page=schoollife">Schulleben</a></li>
 						<li><a title="OGS" href="article.php?page=ogs">OGS</a></li>
 						<li><a title="F&ouml;rderverein" href="article.php?page=foundation">F&ouml;rderverein</a></li>
+            <li><a title="Kontakt" href="article.php?page=contact">Kontakt</a></li>
 						<li><a title="Impressum" href="article.php?page=impressum">Impressum</a></li>
 					</ul>
 				</nav>
@@ -88,10 +88,6 @@
 					<textarea name="content" placeholder="Inhalt des Artikels"><?=($content)?></textarea>
 					<input type="submit" role="btn" value="Speichern" />
 				</form>
-
-				<?php
-					include_once("formatting_tip.html");
-				?>
 			</section>
 		</section>
 	</body>

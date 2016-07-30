@@ -11,9 +11,9 @@
 	$res = mysql_query($sql) or error_log(mysql_error());
 	$num_date = mysql_num_rows($res);
 
-	$sql = "SELECT id FROM messages";
+	$sql = "SELECT id FROM news";
 	$res = mysql_query($sql) or error_log(mysql_error());
-	$num_message = mysql_num_rows($res);
+	$num_news = mysql_num_rows($res);
 
 	$sql = "SELECT id FROM content";
 	$res = mysql_query($sql) or error_log(mysql_error());
@@ -22,33 +22,34 @@
 	$sql1 = "SELECT * FROM date WHERE show_date = '1'";
 	$res1 = mysql_query($sql1) or error_log(mysql_error());
 
-	$sql2 = "SELECT * FROM messages";
-	$res2 = mysql_query($sql2) or error_log(mysql_error());
+	$sql2 = "SELECT * FROM news WHERE show_news = '1' ORDER BY created DESC";
+	$res2 = mysql_query($sql2) or die(mysql_error());
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta charset="utf-8"/>
 		<title>Barbaraschule Herten</title>
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="img/x-icon" href="img/favicon/favicon.ico" />
+		<link rel="shortcut icon" href="img/favicon/favicon.png" />
+		<link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-57x57.png" sizes="57x57" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-72x72.png" sizes="72x72" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-76x76.png" sizes="76x76" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-114x114.png" sizes="114x114" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-144x144.png" sizes="144x144" />
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
 	</head>
 	<body>
 		<section id="body">
-			<aside>
-				<img src="img/avatar.png" title="<?=($_SESSION['user']['name'])?>"/>
-				<p><?=($_SESSION['user']['name'])?></p>
-				<hr />
-				<nav>
-					<ul>
-						<li><a href="index.php" id="active" title="Dashboard">Dashboard</a></li>
-						<li><a href="message.php" title="Nachrichten">Nachrichten</a></li>
-						<li><a href="article.php" title="Artikel">Artikel</a></li>
-						<li><a href="date.php" title="Termine">Termine</a></li>
-						<li><a href="image.php" title="Bilder">Bilder</a></li>
-						<li><a href="login.php" title="Logout">Logout</a></li>
-					</ul>
-				</nav>
-			</aside>
+      <?php
+        include_once('aside.php');
+       ?>
 			<section id="content">
 				<h1>Dashboard</h1>
 
@@ -74,7 +75,7 @@
 <?php
 while($dsatz = mysql_fetch_assoc($res1)){
 	$title = $dsatz['title'];
-	$date = date("d.m.Y", strtotime($dsatz['date']));
+  $date = date("d.m.Y", strtotime($dsatz['date']));
 ?>
 
 							<article>
@@ -93,38 +94,42 @@ while($dsatz = mysql_fetch_assoc($res1)){
 					</section>
 				</section>
 				<section id="col">
-					<a href="message.php"><section id="dashboard_message" class="dashboard_box_small grey">
-						<?=($num_message)?>
+					<a href="news.php"><section id="dashboard_message" class="dashboard_box_small grey">
+						<?=($num_news)?>
 					</section></a>
 					<section class="dashboard_box_big grey">
-						<h2>Nachrichten</h2>
+						<h2>News</h2>
 						<section class="message">
 
 <?php
 while($dsatz = mysql_fetch_assoc($res2)){
-	$name = $dsatz['name'];
-	$email = $dsatz['email'];
-	$message = $dsatz['message'];
+	$title = $dsatz['newstitle'];
+	$description = $dsatz['description'];
+	$page = $dsatz['page'];
+
+  if($page == "schoolnews"){		    $pagetitle = "Schulnews";}
+  else if($page == "classnews"){  	$pagetitle = "Klassennews";}
+  else if($page == "ogsnews"){  	  $pagetitle = "OGS-News";}
 ?>
 
 							<article>
-								<h3><?=($name)?></h3>
-								<span ><?=($email)?></span>
-								<p><?=($message)?></p>
+								<h3><?=($title)?></h3>
+								<span ><?=($pagetitle)?></span>
+								<p><?=($description)?></p>
 							</article>
 
 <?php
 }
 
 if(mysql_num_rows($res2) == null){
-	echo "<article><p>Zurzeit liegt keine Nachricht vor</p></article>";
+	echo "<article><p>Zurzeit liegt keine News vor</p></article>";
 }
 ?>
 
 						</section>
-						
+
 					</section>
-					
+
 				</section>
 				<section id="clear"></section>
 			</section>
